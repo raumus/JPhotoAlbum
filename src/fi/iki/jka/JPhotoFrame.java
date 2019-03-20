@@ -580,10 +580,10 @@ public class JPhotoFrame extends JFrame
             showExif();
         }
         else if (cmd.equals(JPhotoMenu.A_SLIDESHOW)) {
-            performSlideShow(photos, list, 5000);
+            performSlideShow(photos, list, 5000, cmd);
         }
         else if (cmd.equals(JPhotoMenu.A_QUICK_PREVIEW)) {
-            performSlideShow(photos, list, 1000);
+            performSlideShow(photos, list, 1000, cmd);
         }
         else if (cmd.equals(JPhotoMenu.A_HELP)) {
             displayHelp();
@@ -622,7 +622,7 @@ public class JPhotoFrame extends JFrame
         setTitle();
     }
 
-    private void performSlideShow(JPhotoCollection photos, JPhotoList list, int interval) {
+    protected void performSlideShow(JPhotoCollection photos, JPhotoList list, int interval, String cmd) {
         if (photos.getSize()>0) {
             JPhotoShow show = new JPhotoShow(photos, interval, list);
             show.setVisible(true);

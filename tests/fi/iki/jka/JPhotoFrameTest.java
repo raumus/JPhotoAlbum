@@ -15,9 +15,12 @@ public class JPhotoFrameTest {
 
     @Test
     public void testPerformSlideShow() throws Exception {
-        JPhotoFrame frame = new JPhotoFrame("Test Frame", new JPhotoCollection());
-        ActionEvent ev = new ActionEvent("source", 0 , JPhotoMenu.A_SLIDESHOW);
-        frame.actionPerformed(ev);
+        TestJPhotoFrame frame = new TestJPhotoFrame("Test Frame", new JPhotoCollection());
+        ActionEvent slideShow = new ActionEvent("source", 0 , JPhotoMenu.A_SLIDESHOW);
+        frame.actionPerformed(slideShow);
+
+        ActionEvent quickPreview = new ActionEvent("source", 0 , JPhotoMenu.A_QUICK_PREVIEW);
+        frame.actionPerformed(quickPreview);
     }
 
 
