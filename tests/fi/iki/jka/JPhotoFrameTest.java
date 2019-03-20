@@ -1,5 +1,6 @@
 package fi.iki.jka;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.awt.event.ActionEvent;
@@ -18,9 +19,11 @@ public class JPhotoFrameTest {
         TestJPhotoFrame frame = new TestJPhotoFrame("Test Frame", new JPhotoCollection());
         ActionEvent slideShow = new ActionEvent("source", 0 , JPhotoMenu.A_SLIDESHOW);
         frame.actionPerformed(slideShow);
+        Assert.assertEquals(5000, frame.interval);
 
         ActionEvent quickPreview = new ActionEvent("source", 0 , JPhotoMenu.A_QUICK_PREVIEW);
         frame.actionPerformed(quickPreview);
+        Assert.assertEquals(1000, frame.interval);
     }
 
 
