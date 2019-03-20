@@ -10,6 +10,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class JPhotoMenu {
+    public static final String A_QUICK_PREVIEW = "Quick Preview";
     public static String A_NEW = "New";
     public static String A_OPEN = "Open...";
     public static String A_SAVE = "Save";
@@ -158,6 +159,7 @@ public class JPhotoMenu {
         add(menu, A_SHOWEXIF, KeyEvent.VK_E,
             KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.CTRL_MASK) );
         add(menu, A_SLIDESHOW, KeyEvent.VK_S);
+        add(menu, A_QUICK_PREVIEW, KeyEvent.VK_P);
 
         
         menu = new JMenu(new JPhotoAction(listener, "Help", KeyEvent.VK_H));
